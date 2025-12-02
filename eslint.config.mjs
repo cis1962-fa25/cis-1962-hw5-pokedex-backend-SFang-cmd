@@ -8,15 +8,15 @@ export default defineConfig([
         files: ['**/*.{js,mjs,cjs}'],
         plugins: { js, unicorn: eslintPluginUnicorn },
         extends: ['js/recommended'],
-        languageOptions: { 
+        languageOptions: {
             ecmaVersion: "latest",
-			sourceType: "module",
-            globals: globals.browser 
+            sourceType: "module",
+            globals: { ...globals.browser, ...globals.node } 
         },
         rules: {
             // eslint base rules
             'no-lonely-if': 'error',
-            eqeqeq: 'error',
+            'eqeqeq': 'error',
             'prefer-const': 'error',
             'no-var': 'error',
             'prefer-template': 'error',
